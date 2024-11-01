@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className=" bg-black mt-48  justify-between">
+    <div className=" bg-black  justify-between">
         <div className="flex flex-row space-x-20 px-36 py-12 justify-between">
             <div className="flex flex-col space-y-5 text-white">
                 <h1 className="font-bold text-3xl ">Quick links</h1>
