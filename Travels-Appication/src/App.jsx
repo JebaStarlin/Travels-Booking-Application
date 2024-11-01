@@ -1,10 +1,10 @@
 import './App.css'
+import Story from './components/Story'
 
 function App() {
-
   return (
     <>
-      <div>not Started</div>
+      <Story/>
     </>
   )
 }
