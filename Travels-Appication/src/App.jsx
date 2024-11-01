@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div>Started</div>
+      <div>not Started</div>
     </>
   )
 }
