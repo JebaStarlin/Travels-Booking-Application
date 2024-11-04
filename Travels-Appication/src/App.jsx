@@ -1,10 +1,10 @@
 import './App.css'
-import Story from './components/Story'
+import Singledetails from './components/Singledetails'
 
 function App() {
   return (
     <>
-      <Story/>
+      <Singledetails/>
     </>
   )
 }
