@@ -7,7 +7,6 @@ import Entry from './components/Entry'
 import Packages from './components/Packages'
 import TopSearches from './components/TopSearches'
 
-
 function App() {
   return (
     <>
