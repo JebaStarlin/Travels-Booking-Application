@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Path from '../assets/bg3.jpg'
 
 function Package() {

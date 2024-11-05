@@ -3,6 +3,7 @@ import './App.css'
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Singledetails from './components/Singledetails'
+
 import NavBar from './components/navbar'
 import Story from './components/Story'
 import Entry from './components/Entry'
@@ -13,9 +14,21 @@ import Footer from './components/Footer'
 import Login from './components/Login'
 import Signup from './components/Signup'
 
+
 function App() {
   return (
     <>
+
+      <Story/>
+      <NavBar/>
+      <Entry/>
+      <TopSearches/>
+      <Displayhome/>
+      <Packages/>
+      <Story/>
+      <Footer/>
+
+
       <BrowserRouter>
         <Routes>
           <Route path='/sign-up' element={<Signup/>} />
