@@ -1,6 +1,7 @@
 package com.example.Travels_back.controller;
 
 import com.example.Travels_back.model.User;
+import com.example.Travels_back.service.JWTService;
 import com.example.Travels_back.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,8 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private JWTService jwtService;
     @PostMapping("/register")
     public ResponseEntity<Map<String,Object>> register(@RequestBody User user){
         Map<String,Object> map = new HashMap<>();
@@ -38,9 +41,9 @@ public class UserController {
         return userService.findAll();
     }
 
-    @GetMapping("/login")
-    public String login(){
-        return "Yes";
+    @PostMapping("/login")
+    public String login(@RequestBody User user){
+        return jwtService.generateToken(user.getUsername());
     }
 
 }
