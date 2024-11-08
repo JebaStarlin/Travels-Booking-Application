@@ -1,7 +1,10 @@
+import Vehiclehome from "./Vehiclehome"
 
-function Displayhome() {
+
+function Display() {
   return (
-    <div className='  '>
+    <div>
+      <div>
       <div className='flex justify between px-36 py-16'>
         <p className='text-3xl font-bold '>Display</p>
         <div className='flex flex-col py-16 space-y-5'>
@@ -21,9 +24,13 @@ function Displayhome() {
         </div>
         </div>
       </div>
-     
+      </div>
+      <div>
+        <Vehiclehome/>
+        <Vehiclehome/>
+      </div>
     </div>
   )
 }
 
-export default Displayhome
+export default Display
