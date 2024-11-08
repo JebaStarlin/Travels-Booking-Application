@@ -1,67 +1,71 @@
-
-import { useState } from 'react'
-import bgimg from '../assets/Delhi.jpg'
+import { useState } from 'react';
+import bgimg from '../assets/Well.jpg';
+import { Link } from 'react-router-dom';
 
 function Login() {
-    const [username,setUserName]=useState("")
-    const [password,setPassword]=useState("")
+    const [username, setUserName] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleUsername = (e)=>{
-        setUserName(e.target.value)
-        console.log(username)
-    }
+    const handleUsername = (e) => {
+        setUserName(e.target.value);
+        console.log(username);
+    };
 
-    const handlePassword = (e)=>{
-        setPassword(e.target.value)
-        console.log(password)
-    }
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+        console.log(password);
+    };
 
-    const submit =()=>{
+    const submit = () => {
+        // Add your submit logic here
+    };
+
+    return (
+        <div>
+              <nav className='flex flex-row justify-between items-center bg-black text-white h-20 px-10'>
+       <div className="flex flex row space-x-4 ">
+       <p><Link to ="/">HOME</Link></p>
+        <p><Link to ="/Packages">PACKAGES</Link></p>
+        </div> 
         
-    }
-
-    // async function submit() {
-    //     const res = await fetch("http://localhost:8080/hello")
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    //     .catch(error => console.error(error))
-        
-    // }
-
-  return (
-    <div className='h-[100vh] bg-top  bg-cover flex flex-row justify-center' style={{backgroundImage:`url(${bgimg})`}}>
-        <div className='h-[550px] w-[450px] border-2 my-24 rounded-xl bg-opacity-40 bg-gray-50'>
-            <p className='py-10 flex justify-center text-5xl font-bold'>Login</p>
-            <div>
-                <p className='text-lg px-10'>
-                    username:
-                </p>
-                <div className='h-12 w-60 bg-white rounded-lg mx-24 my-4'>
-                    <input className='h-full w-full' type="text" name="username" id="name" onChange={handleUsername}/>
+       <div className="flex flex row space-x-4 ">
+    
+            <p><Link to ="/Signup">SIGNUP</Link></p>
+        </div>
+    </nav>
+            <div className='h-screen bg-top bg-cover flex justify-center items-center' style={{ backgroundImage: `url(${bgimg})` }}>
+        <div className='h-auto w-full max-w-md border-2 my-24 rounded-xl bg-opacity-40 bg-gray-50 p-8 md:p-12'>
+            <p className='text-center text-3xl md:text-5xl font-bold mb-8'>Login</p>
+            <div className='mb-6'>
+                <label className='block text-lg px-2'>Username:</label>
+                <div className='h-12 bg-white rounded-lg mt-2'>
+                    <input className='h-full w-full px-2' type="text" name="username" id="name" onChange={handleUsername} />
                 </div>
             </div>
-            <div>
-                <p className='text-lg px-10'>
-                    password:
-                </p>
-                <div className='h-12 w-60 bg-white rounded-lg mx-24 my-4'>
-                <input className='h-full w-full' type="password" name="password" id="password" onChange={handlePassword}/>
+            <div className='mb-6'>
+                <label className='block text-lg px-2'>Password:</label>
+                <div className='h-12 bg-white rounded-lg mt-2'>
+                    <input className='h-full w-full px-2' type="password" name="password" id="password" onChange={handlePassword} />
                 </div>
             </div>
-            <div>
-                <p className='pl-60'>Forgot password?</p>
-                <div className='h-10 w-28 bg-black rounded-lg mx-40 my-5'>
-                    <p className='text-white flex flex-row justify-center py-2' onClick={submit}>Login</p>
-              </div>
+            <div className='flex justify-end mb-4'>
+                <p className='text-right text-sm'>Forgot password?</p>
             </div>
-            <p>____________________________or_______________________________</p>
-            <div>
-                <p className='px-32 pt-4'>Create a new account?</p>
-                <p className='px-48 p font-bold  '>Sign up</p>
+            <div className='flex justify-center'>
+                <button className='h-10 w-28 bg-black rounded-lg text-white font-semibold' onClick={submit}>
+                    Login
+                </button>
+            </div>
+            <p className='my-6 text-center'>______________________ or ______________________</p>
+            <div className='text-center'>
+                <p className='mb-2'>Create a new account?</p>
+                <p className='font-bold text-blue-600 cursor-pointer'><Link to ="/Signup">Sign up</Link></p>
             </div>
         </div>
     </div>
-  )
+    </div>
+        
+    );
 }
 
-export default Login
+export default Login;
