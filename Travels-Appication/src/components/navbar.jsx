@@ -1,6 +1,7 @@
 //<<<<<<< Starlin
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
   const [username, setUserName]=useState(null)
@@ -40,8 +41,8 @@ function Navbar(props) {
       navigate("/login")
     }
 // =======
-import { Link } from "react-router-dom";
-// >>>>>>> main
+// import { Link } from "react-router-dom";
+// // >>>>>>> main
 
   return (
     <nav className='flex flex-row justify-between items-center bg-black text-white h-20 px-10'>
@@ -54,18 +55,19 @@ import { Link } from "react-router-dom";
         <p><Link to ="/Contacts">CONTACTS</Link></p>
         </div> 
         
-// <<<<<<< Starlin
+{/* // <<<<<<< Starlin */}
         <div className=''>
             <p>
               {username==null && <div onClick={toLogin}>Login/SignUp</div> }
               {username!=null && <div>{username}</div> }
             </p>
-// =======
+        </div>
+{/* // ======= */}
        <div className="flex flex row space-x-4 ">
         
             <p><Link to ="/Login">LOGIN</Link></p>
             <p><Link to ="/Signup">SIGNUP</Link></p>
-// >>>>>>> main
+{/* // >>>>>>> main */}
         </div>
     </nav>
   )
