@@ -8,8 +8,8 @@ function Navbar(props) {
   const navigate = useNavigate()
 
    useEffect(()=>{
-      console.log("irvd")
-      console.log(props.token)
+      // console.log("irvd")
+      // console.log(props.token)
       if(props.token != null){
         apiCall()
       }
@@ -40,9 +40,6 @@ function Navbar(props) {
     const toLogin = ()=>{
       navigate("/login")
     }
-// =======
-// import { Link } from "react-router-dom";
-// // >>>>>>> main
 
   return (
     <nav className='flex flex-row justify-between items-center bg-black text-white h-20 px-10'>
@@ -57,18 +54,18 @@ function Navbar(props) {
         
 {/* // <<<<<<< Starlin */}
         <div className=''>
-            <p>
-              {username==null && <div onClick={toLogin}>Login/SignUp</div> }
+            <div>
+              {username==null && <div onClick={toLogin}>LOGIN/SIGNUP</div> }
               {username!=null && <div>{username}</div> }
-            </p>
+            </div>
         </div>
 {/* // ======= */}
-       <div className="flex flex row space-x-4 ">
+       {/* <div className="flex flex row space-x-4 ">
         
             <p><Link to ="/Login">LOGIN</Link></p>
-            <p><Link to ="/Signup">SIGNUP</Link></p>
+            <p><Link to ="/Signup">SIGNUP</Link></p> */}
 {/* // >>>>>>> main */}
-        </div>
+        {/* </div> */}
     </nav>
   )
 }

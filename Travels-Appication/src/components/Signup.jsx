@@ -24,7 +24,11 @@ function Signup() {
     const handlePassword2 = (e) => {
         setPassword2(e.target.value);
     };
-
+     //  Starlin
+    const toLogin=()=>{
+        navigate("/login")
+    }
+    // =======
     async function submit() {
         if (password1 === password2) {
             const url = 'http://localhost:8081/register';
@@ -63,25 +67,20 @@ function Signup() {
     return (
         <div>
             <nav className='flex flex-row justify-between items-center bg-black text-white h-20 px-10'>
-       <div className="flex flex row space-x-4 ">
-       <p><Link to ="/">HOME</Link></p>
-        <p><Link to ="/Packages">PACKAGES</Link></p>
-        </div> 
-        
-       <div className="flex flex row space-x-4 ">
-    
-// <<<<<<< Starlin
-    const toLogin=()=>{
-        navigate("/login")
-    }
-// =======
-       <p><Link to ="/Login">LOGIN</Link></p>
-        </div>
-    </nav>
-// >>>>>>> main
+                <div className="flex flex row space-x-4 ">
+                <p><Link to ="/">HOME</Link></p>
+                    <p><Link to ="/Packages">PACKAGES</Link></p>
+                    </div> 
+                    
+                <div className="flex flex row space-x-4 ">
+                
 
-<div className='h-screen bg-top bg-cover flex justify-center items-center' style={{ backgroundImage: `url(${bgimg})` }}>
-            <div className='h-auto w-full max-w-md border-2 rounded-xl bg-opacity-40 bg-gray-50 p-8 md:p-12'>
+                <p><Link to ="/Login">LOGIN</Link></p>
+                </div>
+            </nav>
+
+        <div className='h-screen bg-top bg-cover flex justify-center items-center ' style={{ backgroundImage: `url(${bgimg})` }}>
+            <div className='h-auto w-full max-w-md border-2 rounded-xl bg-opacity-40 bg-gray-50 p-8 my-20 md:p-12'>
                 <p className='text-center text-3xl md:text-5xl font-bold mb-8'>Sign up</p>
                 <div className='mb-6'>
                     <label className='block text-lg px-2'>Username:</label>
@@ -117,21 +116,21 @@ function Signup() {
                     <p className='mb-2'>Already have an account?</p>
                     <p className='font-bold text-blue-600 cursor-pointer'><Link to ="/Login">Sign in</Link></p>
                 </div>
-            </div>
-// Starlin
-            
-            <div>
+                {/* <div>
                 <div className='h-10 w-28 bg-black rounded-lg mx-40 my-5'>
                     <p className='text-white flex flex-row justify-center py-2' onClick={submit}>Sign Up</p>
-              </div>
+                </div>
+                </div>
+                <p>____________________________or_______________________________</p>
+                <div className='h-[20vh] flex flex-col gap-4 items-center justify-center'>
+                    <p className=''>Already have an account?</p>
+                    <p className=' font-bold cursor-pointer' onClick={toLogin}>Sign In</p>
+                </div> */}
             </div>
-            <p>____________________________or_______________________________</p>
-            <div className='h-[20vh] flex flex-col gap-4 items-center justify-center'>
-                <p className=''>Already have an account?</p>
-                <p className=' font-bold cursor-pointer' onClick={toLogin}>Sign In</p>
-            </div>
-// ====
-//  main
+{/* // Starlin */}
+            
+{/* // ====
+//  main */}
         </div>
 
         </div>
