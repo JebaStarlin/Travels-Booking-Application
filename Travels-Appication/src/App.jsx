@@ -1,16 +1,17 @@
 import './App.css'
-import Singledetails from './components/Singledetails'
-import Vehiclehome from './components/Vehiclehome'
-import NavBar from './components/Navbar'
-import Story from './components/Story'
-import Entry from './components/Entry'
-import Packages from './components/Packages'
-import TopSearches from './components/TopSearches'
-import Displayhome from './components/Displayhome'
-import Footer from './components/Footer'
-import Login from './components/Login'
-import Signup from './components/Signup'
+// import Singledetails from './components/Singledetails'
+// import Vehiclehome from './components/Vehiclehome'
+
+// import Story from './components/Story'
+// import Entry from './components/Entry'
+// import Packages from './components/Packages'
+// import TopSearches from './components/TopSearches'
+// import Displayhome from './components/Displayhome'
+// import Footer from './components/Footer'
+// import Login from './components/Login'
+// import Signup from './components/Signup'
 import { useState } from 'react';
+import Navbar from './components/navbar'
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     }
   return (
     <>
-
+      <Navbar/>
       <BrowserRouter>
         <Routes>
 //           <Route path='/sign-up' element={<Signup/>} />
