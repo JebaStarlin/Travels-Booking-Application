@@ -1,10 +1,7 @@
 import './App.css'
-
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Singledetails from './components/Singledetails'
-
-import NavBar from './components/navbar'
+import Vehiclehome from './components/Vehiclehome'
+import NavBar from './components/Navbar'
 import Story from './components/Story'
 import Entry from './components/Entry'
 import Packages from './components/Packages'
@@ -28,17 +25,27 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path='/sign-up' element={<Signup/>} />
-          <Route path='/login' element={<Login token={token} handleToken={handleToken} />} />
-          <Route path='/' element={<>
-            <NavBar token={token} handleToken={handleToken}/>
-            <Entry/>
-            <TopSearches/>
-            <Displayhome/>
-            <Packages/>
-            <Story/>
-            <Footer/>
-          </>} />
+//           <Route path='/sign-up' element={<Signup/>} />
+//           <Route path='/login' element={<Login token={token} handleToken={handleToken} />} />
+//           <Route path='/' element={<>
+//              <NavBar token={token} handleToken={handleToken}/>
+//             <Entry/>
+//             <TopSearches/>
+//             <Displayhome/>
+//             <Packages/>
+//             <Story/>
+//             <Footer/>
+//           </>} />
+        <Route path="/" element={<>
+<NavBar/><Entry/><TopSearches/><Displayhome/><Vehiclehome/><Packages/><Story/><Footer/>
+      </> }/>
+      <Route path="/Packages" element={<><NavBar/><PackageEntryFill/><Packages/><Packages/><Footer/></>}/>
+      <Route path="/Contacts" element={<><NavBar/><Contacts/><Footer/></>}/>
+      <Route path="/Login" element={<><Login/></>}/>
+      <Route path="/Signup" element={<><Signup/></>}/>
+      <Route path="/Booking" element={<><Navbar/><Search/><Singledetails/><Singledetails/><Singledetails/><Footer/></>}/>
+      <Route path="/Display" element={<><NavBar/><Display/><Footer/></>}/>
+      <Route path="/ViewDetails" element={<><NavBar/><ViewDetails/><Footer/></>}/>
         </Routes>
       </BrowserRouter>
     </>
