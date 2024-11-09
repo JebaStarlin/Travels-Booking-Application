@@ -13,26 +13,32 @@ import Displayhome from './components/Displayhome'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import { useState } from 'react';
 
 
 function App() {
+
+    const [token,setToken] = useState(null)
+
+    function handleToken(t){
+      setToken(t)
+    }
   return (
     <>
-
-      <Story/>
-      <NavBar/>
-      <Entry/>
-      <TopSearches/>
-      <Displayhome/>
-      <Packages/>
-      <Story/>
-      <Footer/>
-
 
       <BrowserRouter>
         <Routes>
           <Route path='/sign-up' element={<Signup/>} />
-          <Route path='/login' element={<Login/>} />
+          <Route path='/login' element={<Login token={token} handleToken={handleToken} />} />
+          <Route path='/' element={<>
+            <NavBar token={token} handleToken={handleToken}/>
+            <Entry/>
+            <TopSearches/>
+            <Displayhome/>
+            <Packages/>
+            <Story/>
+            <Footer/>
+          </>} />
         </Routes>
       </BrowserRouter>
     </>

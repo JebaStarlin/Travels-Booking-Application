@@ -79,6 +79,9 @@ function Signup() {
         }
     }
     
+    const toLogin=()=>{
+        navigate("/login")
+    }
 
   return (
     <div className='h-[150vh] bg-top  bg-cover flex flex-row justify-center' style={{backgroundImage:`url(${bgimg})`}}>
@@ -125,7 +128,7 @@ function Signup() {
             <p>____________________________or_______________________________</p>
             <div className='h-[20vh] flex flex-col gap-4 items-center justify-center'>
                 <p className=''>Already have an account?</p>
-                <p className=' font-bold  '>Sign In</p>
+                <p className=' font-bold cursor-pointer' onClick={toLogin}>Sign In</p>
             </div>
         </div>
     </div>

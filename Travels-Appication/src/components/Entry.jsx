@@ -10,10 +10,10 @@ function Entry() {
         </div>
         <div className='h-24 w-9/12 bg-white rounded-3xl flex box-content'>
             <div className='w-3/12 h-full  flex justify-center p-8 border-r-2' >
-                <input className='border-b-2 h-8 ' type="text" name="" id="" placeholder='From' />
+                <input className='border-b-2 h-8 w-full' type="text" name="" id="" placeholder='From' />
             </div>
             <div className='w-3/12 h-full  flex justify-center p-8 border-r-2' >
-                <input className='border-b-2 h-8 ' type="text" name="" id="" placeholder='To'/>
+                <input className='border-b-2 h-8 w-full' type="text" name="" id="" placeholder='To'/>
             </div>
             <div className='w-3/12 h-full  flex justify-center p-8 border-r-2 ' >
                 <input className='w-full' type="date" name="" id="" />
