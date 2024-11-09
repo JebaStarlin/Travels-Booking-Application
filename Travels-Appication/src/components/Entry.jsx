@@ -55,7 +55,7 @@ function Entry() {
           />
 
         </div>
-        <div className='w-full md:w-1/4 flex justify-center items-center p-2 md:p-8 bg-black text-white rounded-b-3xl md:rounded-b-none md:rounded-r-3xl cursor-pointer'>
+        <div className='w-full md:w-1/4 flex justify-center items-center p-2 md:p-8 bg-black hover:bg-gray-800 active:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 text-white rounded-b-3xl md:rounded-b-none md:rounded-r-3xl cursor-pointer'>
           <p className='text-lg md:text-xl' onClick={() => console.log({ from, to, date })}>Book</p>
         </div>
       </div>
