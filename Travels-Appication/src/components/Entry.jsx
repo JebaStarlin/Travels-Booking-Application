@@ -31,6 +31,21 @@ function Entry() {
             onChange={(e) => setTo(e.target.value)}
           />
         </div>
+
+//         <div className='h-24 w-9/12 bg-white rounded-3xl flex box-content'>
+//             <div className='w-3/12 h-full  flex justify-center p-8 border-r-2' >
+//                 <input className='border-b-2 h-8 w-full' type="text" name="" id="" placeholder='From' />
+//             </div>
+//             <div className='w-3/12 h-full  flex justify-center p-8 border-r-2' >
+//                 <input className='border-b-2 h-8 w-full' type="text" name="" id="" placeholder='To'/>
+//             </div>
+//             <div className='w-3/12 h-full  flex justify-center p-8 border-r-2 ' >
+//                 <input className='w-full' type="date" name="" id="" />
+//             </div>
+//             <div className='w-3/12 h-full overflow-hidden rounded-r-3xl flex justify-center p-8 bg-black text-white'  >
+//                 <p className='text-xl h-8'>book</p>
+//             </div>
+
         <div className='w-full md:w-1/4 flex justify-center items-center p-2 md:p-8 border-b-2 md:border-b-0 md:border-r-2'>
           <input
             className='w-full h-8'
@@ -38,6 +53,7 @@ function Entry() {
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
+
         </div>
         <div className='w-full md:w-1/4 flex justify-center items-center p-2 md:p-8 bg-black text-white rounded-b-3xl md:rounded-b-none md:rounded-r-3xl cursor-pointer'>
           <p className='text-lg md:text-xl' onClick={() => console.log({ from, to, date })}>Book</p>

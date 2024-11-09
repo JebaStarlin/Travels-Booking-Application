@@ -70,9 +70,15 @@ function Signup() {
         
        <div className="flex flex row space-x-4 ">
     
+// <<<<<<< Starlin
+    const toLogin=()=>{
+        navigate("/login")
+    }
+// =======
        <p><Link to ="/Login">LOGIN</Link></p>
         </div>
     </nav>
+// >>>>>>> main
 
 <div className='h-screen bg-top bg-cover flex justify-center items-center' style={{ backgroundImage: `url(${bgimg})` }}>
             <div className='h-auto w-full max-w-md border-2 rounded-xl bg-opacity-40 bg-gray-50 p-8 md:p-12'>
@@ -112,6 +118,20 @@ function Signup() {
                     <p className='font-bold text-blue-600 cursor-pointer'><Link to ="/Login">Sign in</Link></p>
                 </div>
             </div>
+// Starlin
+            
+            <div>
+                <div className='h-10 w-28 bg-black rounded-lg mx-40 my-5'>
+                    <p className='text-white flex flex-row justify-center py-2' onClick={submit}>Sign Up</p>
+              </div>
+            </div>
+            <p>____________________________or_______________________________</p>
+            <div className='h-[20vh] flex flex-col gap-4 items-center justify-center'>
+                <p className=''>Already have an account?</p>
+                <p className=' font-bold cursor-pointer' onClick={toLogin}>Sign In</p>
+            </div>
+// ====
+//  main
         </div>
 
         </div>

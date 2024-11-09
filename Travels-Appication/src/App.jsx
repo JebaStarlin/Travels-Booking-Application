@@ -8,21 +8,35 @@ import Packages from './components/Packages'
 import TopSearches from './components/TopSearches'
 import Displayhome from './components/Displayhome'
 import Footer from './components/Footer'
-import PackageEntryFill from "./components/PackageEntryFill"
-import Contacts from "./components/Contacts"
-import Login from "./components/Login"
-import Signup from "./components/Signup"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './components/Navbar'
-import Search from './components/Search'
-import Display from './components/Display'
-import ViewDetails from './components/ViewDetails'
-function App() {
-  return (
-    <BrowserRouter>
+import Login from './components/Login'
+import Signup from './components/Signup'
+import { useState } from 'react';
 
-    <Routes>
-      <Route path="/" element={<>
+
+function App() {
+
+    const [token,setToken] = useState(null)
+
+    function handleToken(t){
+      setToken(t)
+    }
+  return (
+    <>
+
+      <BrowserRouter>
+        <Routes>
+//           <Route path='/sign-up' element={<Signup/>} />
+//           <Route path='/login' element={<Login token={token} handleToken={handleToken} />} />
+//           <Route path='/' element={<>
+//              <NavBar token={token} handleToken={handleToken}/>
+//             <Entry/>
+//             <TopSearches/>
+//             <Displayhome/>
+//             <Packages/>
+//             <Story/>
+//             <Footer/>
+//           </>} />
+        <Route path="/" element={<>
 <NavBar/><Entry/><TopSearches/><Displayhome/><Vehiclehome/><Packages/><Story/><Footer/>
       </> }/>
       <Route path="/Packages" element={<><NavBar/><PackageEntryFill/><Packages/><Packages/><Footer/></>}/>
@@ -32,9 +46,9 @@ function App() {
       <Route path="/Booking" element={<><Navbar/><Search/><Singledetails/><Singledetails/><Singledetails/><Footer/></>}/>
       <Route path="/Display" element={<><NavBar/><Display/><Footer/></>}/>
       <Route path="/ViewDetails" element={<><NavBar/><ViewDetails/><Footer/></>}/>
-    </Routes>
-    
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 
