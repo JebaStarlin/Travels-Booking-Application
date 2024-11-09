@@ -10,7 +10,7 @@ function Vehiclehome() {
         <div className="w-[300px] h-[400px] bg-black rounded-2xl">
             <img onClick={hello} className=' w-[300px] h-[400px] object-left object-cover  rounded-2xl' src={veh1} alt=""/>
         </div>
-        <div className='h-15  bg-black rounded-lg mx-20 my-5'>
+        <div className='h-15  bg-black hover:bg-gray-800 active:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 rounded-lg mx-20 my-5'>
             <p className=' text-white px-5 py-2 '><Link to ="/ViewDetails">View Details</Link></p>
         </div>
         </div>
@@ -19,7 +19,7 @@ function Vehiclehome() {
         <div className="w-[300px] h-[400px] bg-black rounded-2xl">
             <img onClick={hello} className=' w-[300px] h-[400px] object-left object-cover  rounded-2xl' src={veh1} alt=""/>
         </div>
-        <div className='h-15  bg-black rounded-lg mx-20 my-5'>
+        <div className='h-15  bg-black hover:bg-gray-800 active:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 rounded-lg mx-20 my-5'>
             <p className=' text-white px-5 py-2 '><Link to ="/ViewDetails">View Details</Link></p>
         </div>
         </div>
@@ -28,7 +28,7 @@ function Vehiclehome() {
         <div className="w-[300px] h-[400px] bg-black rounded-2xl">
             <img onClick={hello} className=' w-[300px] h-[400px] object-left object-cover  rounded-2xl' src={veh1} alt=""/>
         </div>
-        <div className='h-15  bg-black rounded-lg mx-20 my-5'>
+        <div className='h-15  bg-black hover:bg-gray-800 active:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 rounded-lg mx-20 my-5'>
             <p className=' text-white px-5 py-2 '><Link to ="/ViewDetails">View Details</Link></p>
         </div>
         </div>
@@ -39,3 +39,5 @@ function Vehiclehome() {
 }
 
 export default Vehiclehome
+
+//hover:bg-gray-800 active:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300
