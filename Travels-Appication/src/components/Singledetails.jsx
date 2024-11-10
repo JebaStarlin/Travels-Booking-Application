@@ -1,7 +1,7 @@
 import veh1 from '../assets/tempotravellerrental.jpg';
 
-function Singledetails() {
-  
+function Singledetails(props) {
+    const vehicle = props.vehicle
 
   return (
     <div>
@@ -9,7 +9,7 @@ function Singledetails() {
       
        
       <div className="bg-gray-400 p-4 rounded-lg mb-4">
-        <hr className="border-black"/>
+        {/* <hr className="border-black"/>
         <div className="flex flex-wrap justify-between px-4 md:px-20 mt-5">
           <p>Depart:</p>
           <p>Arrival:</p>
@@ -23,7 +23,7 @@ function Singledetails() {
           <p><input className="h-8 w-20 bg-black text-white rounded-sm" type="text"/></p>
           <p><input className="h-8 w-20 bg-black text-white rounded-sm" type="text"/></p>
           <p><input className="h-8 w-20 bg-black text-white rounded-sm" type="text"/></p>
-        </div>
+        </div> */}
         <hr className="border-black mt-3"/>
         <div className="flex flex-wrap justify-between px-4 md:px-20 mt-3">
           <p>Vehicle Name</p>
@@ -35,13 +35,28 @@ function Singledetails() {
         </div>
         <div className='flex flex-wrap justify-between mx-4 md:mx-20 mt-3'>
           <div className="bg-white">
-            <img className='w-24 h-36 object-cover' src={veh1} alt=""/>
+            {vehicle.vehicleName}
+            {/* <img className='w-24 h-36 object-cover' src={veh1} alt=""/> */}
           </div>
-          <div><input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/></div>
-          <div><input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/></div>
-          <div><input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/></div>
-          <div><input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/></div>
-          <div><input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/></div>
+          <div>
+            <input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/>
+          </div>
+          <div>
+            {/* <input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/> */}
+            {vehicle.vehicleType}
+          </div>
+          <div>
+            {/* <input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/> */}
+            {props.from}
+          </div>
+          <div>
+            {/* <input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/> */}
+            {props.to}
+          </div>
+          <div>
+            {/* <input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/> */}
+            {vehicle.seats}
+          </div>
         </div>
         <div className='flex justify-center items-center space-x-5 pt-10'>
           <p>PRICE :</p>
