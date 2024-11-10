@@ -17,6 +17,7 @@ import Navbar from './components/Navbar'
 import Search from './components/Search'
 import Display from './components/Display'
 import ViewDetails from './components/ViewDetails'
+import Userpop from './components/userpop'
 function App() {
   return (
     <BrowserRouter>
@@ -32,6 +33,7 @@ function App() {
       <Route path="/Booking" element={<><Navbar/><Search/><Singledetails/><Singledetails/><Singledetails/><Footer/></>}/>
       <Route path="/Display" element={<><NavBar/><Display/><Footer/></>}/>
       <Route path="/ViewDetails" element={<><NavBar/><ViewDetails/><Footer/></>}/>
+      <Route path="/Userpop" element={<><Userpop/></>}/>
     </Routes>
     
     </BrowserRouter>
