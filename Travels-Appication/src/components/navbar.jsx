@@ -1,9 +1,23 @@
+//<<<<<<< Starlin
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
 import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import { styled } from '@mui/system';
 import React from "react";
 
-function Nav() {
+function Navbar(props) {
+  const [username, setUserName]=useState(null)
+  const navigate = useNavigate()
+
+   useEffect(()=>{
+      // console.log("irvd")
+      // console.log(props.token)
+      if(props.token != null){
+        apiCall()
+      }
+    },[])
+  
     const [anchor, setAnchor] = React.useState(null);
     const username = "LOGIN"; 
 
@@ -14,9 +28,35 @@ function Nav() {
     };
 
     const open = Boolean(anchor);
-    const id = open ? 'simple-popper' : undefined;
+    const id 
 
-    return (
+    const apiCall = async()=>{
+      try {
+        const response = await fetch("http://localhost:8081/username",{
+          method : "POST",
+          headers : {
+            "Content-Type" : "application/json",
+            "Authorization" : `Bearer ${props.token}`
+          }
+        })
+        if(response.ok){
+          const result = await response.json()
+          console.log(result.username)
+          setUserName(result.username)
+        }
+        else{
+          console.error("Got username not found from api")
+        }
+      } catch (error) {
+        throw new Error(`Error fetching api : ${error}`)
+      }
+    }
+
+    const toLogin = ()=>{
+      navigate("/login")
+    }
+
+  return (
         <nav className='flex flex-row justify-between items-center bg-black text-white h-20 px-10'>
             <div className="flex flex-row space-x-4">
                 <p><Link to="/">HOME</Link></p>
@@ -39,7 +79,6 @@ function Nav() {
             </div>
         </nav>
     );
-}
 
 const grey = {
     700: '#b0b0b0',

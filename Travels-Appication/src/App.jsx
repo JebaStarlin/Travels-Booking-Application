@@ -1,42 +1,112 @@
 import './App.css'
-import Singledetails from './components/Singledetails'
 import Vehiclehome from './components/Vehiclehome'
-import NavBar from './components/Navbar'
+
 import Story from './components/Story'
 import Entry from './components/Entry'
 import Packages from './components/Packages'
 import TopSearches from './components/TopSearches'
 import Displayhome from './components/Displayhome'
 import Footer from './components/Footer'
-import PackageEntryFill from "./components/PackageEntryFill"
-import Contacts from "./components/Contacts"
-import Login from "./components/Login"
-import Signup from "./components/Signup"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './components/Navbar'
+import Login from './components/Login'
+import Signup from './components/Signup'
+import { useState } from 'react';
+import Navbar from './components/navbar'
+import { Route , BrowserRouter, Routes} from 'react-router-dom';
+import PackageEntryFill from './components/PackageEntryFill';
+import Contacts from './components/Contacts'
 import Search from './components/Search'
 import Display from './components/Display'
 import ViewDetails from './components/ViewDetails'
-import Userpop from './components/userpop'
-function App() {
-  return (
-    <BrowserRouter>
 
-    <Routes>
-      <Route path="/" element={<>
-<NavBar/><Entry/><TopSearches/><Displayhome/><Vehiclehome/><Packages/><Story/><Footer/>
-      </> }/>
-      <Route path="/Packages" element={<><NavBar/><PackageEntryFill/><Packages/><Packages/><Footer/></>}/>
-      <Route path="/Contacts" element={<><NavBar/><Contacts/><Footer/></>}/>
-      <Route path="/Login" element={<><Login/></>}/>
-      <Route path="/Signup" element={<><Signup/></>}/>
-      <Route path="/Booking" element={<><Navbar/><Search/><Singledetails/><Singledetails/><Singledetails/><Footer/></>}/>
-      <Route path="/Display" element={<><NavBar/><Display/><Footer/></>}/>
-      <Route path="/ViewDetails" element={<><NavBar/><ViewDetails/><Footer/></>}/>
-      <Route path="/Userpop" element={<><Userpop/></>}/>
-    </Routes>
+import BookingVehicleList from './components/BookingVehicleList'
+
+
+function App() {
+
+    const [token,setToken] = useState(null)
+    const [from ,setFrom]=useState("")
+    const [to,setTo] = useState("")
+    const [date, setDate] = useState('');
+
+    function handleToken(t){
+      setToken(t)
+    }
+
+    function handleFrom(t){
+      setFrom(t)
+    }
+
+    function handleTo(t){
+      setTo(t)
+    }
+    function handleDate(t){
+      setDate(t)
+    }
+    function handleDate2(t){
+      setDate2(t)
+    }
+
+
     
-    </BrowserRouter>
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<>
+              <Navbar token={token}/>
+              <Entry from={from} to={to} handleFrom={handleFrom} handleTo={handleTo} date={date} handleDate={handleDate} />
+              <TopSearches/>
+              <Displayhome/>
+              <Vehiclehome/>
+              <Packages/>
+              <Story/>
+              <Footer/>
+          </> }/>
+
+          <Route path="/Packages" element={<>
+            <Navbar token={token}/>
+            <PackageEntryFill/>
+            <Packages/>
+            <Packages/>
+            <Footer/>
+          </>}/>
+
+          <Route path="/Contacts" element={<>
+            <Navbar token={token}/>
+            <Contacts/>
+            <Footer/>
+          </>}/>
+
+          <Route path="/Login" element={<>
+            <Login token={token} handleToken={(t)=>{handleToken(t)}}/>
+          </>}/>
+
+          <Route path="/Signup" element={<>
+            <Signup/>
+          </>}/>
+
+          <Route path="/Booking" element={<>
+            <Navbar token={token}/>
+            <Search from={from} to={to} handleFrom={handleFrom} handleTo={handleTo} date={date} handleDate={handleDate} />
+            <BookingVehicleList token={token} from={from} to={to} date={date}/>
+            <Footer/>
+          </>}/>
+
+          <Route path="/Display" element={<>
+            <Navbar token={token}/>
+            <Display/>
+            <Footer/>
+          </>}/>
+
+          <Route path="/ViewDetails" element={<>
+            <Navbar token={token}/>
+            <ViewDetails/>
+            <Footer/>
+          </>}/>
+
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 

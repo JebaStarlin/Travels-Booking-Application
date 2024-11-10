@@ -24,7 +24,11 @@ function Signup() {
     const handlePassword2 = (e) => {
         setPassword2(e.target.value);
     };
-
+     //  Starlin
+    const toLogin=()=>{
+        navigate("/login")
+    }
+    // =======
     async function submit() {
         if (password1 === password2) {
             const url = 'http://localhost:8081/register';
@@ -70,6 +74,7 @@ function Signup() {
                         <div className="h-12 bg-white rounded-2xl mt-1">
                             <input className="h-full w-full px-2" type="text" name="username" id="name" onChange={handleUsername} />
                         </div>
+        
                     </div>
                     <div className="mb-5">
                         <label className="block text-lg font-medium px-2">Gmail or Mobile No:</label>
@@ -104,7 +109,21 @@ function Signup() {
                         <p className="font-bold text-blue-600 text-lg cursor-pointer"><Link to="/Login">Sign in</Link></p>
                     </div>
                 </div>
+                {/* <div>
+                <div className='h-10 w-28 bg-black rounded-lg mx-40 my-5'>
+                    <p className='text-white flex flex-row justify-center py-2' onClick={submit}>Sign Up</p>
+                </div>
+                </div>
+                <p>____________________________or_______________________________</p>
+                <div className='h-[20vh] flex flex-col gap-4 items-center justify-center'>
+                    <p className=''>Already have an account?</p>
+                    <p className=' font-bold cursor-pointer' onClick={toLogin}>Sign In</p>
+                </div> */}
             </div>
+{/* // Starlin */}
+            
+{/* // ====
+//  main */}
         </div>
     );
 }
