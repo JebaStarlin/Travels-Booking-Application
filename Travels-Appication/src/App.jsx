@@ -1,5 +1,4 @@
 import './App.css'
-import Singledetails from './components/Singledetails'
 import Vehiclehome from './components/Vehiclehome'
 
 import Story from './components/Story'
@@ -18,32 +17,91 @@ import Contacts from './components/Contacts'
 import Search from './components/Search'
 import Display from './components/Display'
 import ViewDetails from './components/ViewDetails'
+import BookingVehicleList from './components/BookingVehicleList'
 
 
 function App() {
 
     const [token,setToken] = useState(null)
+    const [from ,setFrom]=useState("")
+    const [to,setTo] = useState("")
+    const [date, setDate] = useState('');
 
     function handleToken(t){
-      console.log(" sbcsdnevcsdvcihs")
       setToken(t)
     }
+
+    function handleFrom(t){
+      setFrom(t)
+    }
+
+    function handleTo(t){
+      setTo(t)
+    }
+    function handleDate(t){
+      setDate(t)
+    }
+    function handleDate2(t){
+      setDate2(t)
+    }
+
+    
   return (
     <>
-      
       <BrowserRouter>
         <Routes>
-          {/* Demopage */}
-        <Route path="/" element={<>
-<Navbar token={token}/><Entry/><TopSearches/><Displayhome/><Vehiclehome/><Packages/><Story/><Footer/>
-      </> }/>
-      <Route path="/Packages" element={<><Navbar token={token}/><PackageEntryFill/><Packages/><Packages/><Footer/></>}/>
-      <Route path="/Contacts" element={<><Navbar token={token}/><Contacts/><Footer/></>}/>
-      <Route path="/Login" element={<><Login token={token} handleToken={(t)=>{handleToken(t)}}/></>}/>
-      <Route path="/Signup" element={<><Signup/></>}/>
-      <Route path="/Booking" element={<><Navbar token={token}/><Search/><Singledetails/><Singledetails/><Singledetails/><Footer/></>}/>
-      <Route path="/Display" element={<><Navbar token={token}/><Display/><Footer/></>}/>
-      <Route path="/ViewDetails" element={<><Navbar token={token}/><ViewDetails/><Footer/></>}/>
+          <Route path="/" element={<>
+              <Navbar token={token}/>
+              <Entry from={from} to={to} handleFrom={handleFrom} handleTo={handleTo} date={date} handleDate={handleDate} />
+              <TopSearches/>
+              <Displayhome/>
+              <Vehiclehome/>
+              <Packages/>
+              <Story/>
+              <Footer/>
+          </> }/>
+
+          <Route path="/Packages" element={<>
+            <Navbar token={token}/>
+            <PackageEntryFill/>
+            <Packages/>
+            <Packages/>
+            <Footer/>
+          </>}/>
+
+          <Route path="/Contacts" element={<>
+            <Navbar token={token}/>
+            <Contacts/>
+            <Footer/>
+          </>}/>
+
+          <Route path="/Login" element={<>
+            <Login token={token} handleToken={(t)=>{handleToken(t)}}/>
+          </>}/>
+
+          <Route path="/Signup" element={<>
+            <Signup/>
+          </>}/>
+
+          <Route path="/Booking" element={<>
+            <Navbar token={token}/>
+            <Search from={from} to={to} handleFrom={handleFrom} handleTo={handleTo} date={date} handleDate={handleDate} />
+            <BookingVehicleList token={token} from={from} to={to} date={date}/>
+            <Footer/>
+          </>}/>
+
+          <Route path="/Display" element={<>
+            <Navbar token={token}/>
+            <Display/>
+            <Footer/>
+          </>}/>
+
+          <Route path="/ViewDetails" element={<>
+            <Navbar token={token}/>
+            <ViewDetails/>
+            <Footer/>
+          </>}/>
+
         </Routes>
       </BrowserRouter>
     </>
