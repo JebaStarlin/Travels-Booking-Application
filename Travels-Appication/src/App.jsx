@@ -17,6 +17,7 @@ import Contacts from './components/Contacts'
 import Search from './components/Search'
 import Display from './components/Display'
 import ViewDetails from './components/ViewDetails'
+
 import BookingVehicleList from './components/BookingVehicleList'
 
 
@@ -44,6 +45,7 @@ function App() {
     function handleDate2(t){
       setDate2(t)
     }
+
 
     
   return (

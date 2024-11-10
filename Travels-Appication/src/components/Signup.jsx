@@ -65,56 +65,49 @@ function Signup() {
     }
 
     return (
-        <div>
-            <nav className='flex flex-row justify-between items-center bg-black text-white h-20 px-10'>
-                <div className="flex flex row space-x-4 ">
-                <p><Link to ="/">HOME</Link></p>
-                    <p><Link to ="/Packages">PACKAGES</Link></p>
-                    </div> 
-                    
-                <div className="flex flex row space-x-4 ">
-                
-
-                <p><Link to ="/Login">LOGIN</Link></p>
-                </div>
-            </nav>
-
-        <div className='h-screen bg-top bg-cover flex justify-center items-center ' style={{ backgroundImage: `url(${bgimg})` }}>
-            <div className='h-auto w-full max-w-md border-2 rounded-xl bg-opacity-40 bg-gray-50 p-8 my-20 md:p-12'>
-                <p className='text-center text-3xl md:text-5xl font-bold mb-8'>Sign up</p>
-                <div className='mb-6'>
-                    <label className='block text-lg px-2'>Username:</label>
-                    <div className='h-12 bg-white rounded-lg mt-2'>
-                        <input className='h-full w-full px-2' type="text" name="username" id="name" onChange={handleUsername} />
+        <div className="min-h-screen bg-cover flex flex-col" style={{ backgroundImage: `url(${bgimg})` }}>
+            <div className="flex-grow flex items-center justify-center">
+                <div className="h-[90vh] w-full max-w-md border-2 rounded-xl bg-opacity-40 bg-gray-50 p-8 md:p-12 mx-4 my-20">
+                    <p className="text-center text-3xl md:text-5xl font-bold mb-5">Sign up</p>
+                    <div className="mb-5">
+                        <label className="block text-lg font-medium px-2">Username:</label>
+                        <div className="h-12 bg-white rounded-2xl mt-1">
+                            <input className="h-full w-full px-2" type="text" name="username" id="name" onChange={handleUsername} />
+                        </div>
+        
                     </div>
-                </div>
-                <div className='mb-6'>
-                    <label className='block text-lg px-2'>Gmail or Mobile No:</label>
-                    <div className='h-12 bg-white rounded-lg mt-2'>
-                        <input className='h-full w-full px-2' type="email" name="mail" id="mail" onChange={handleEmail} />
+                    <div className="mb-5">
+                        <label className="block text-lg font-medium px-2">Gmail or Mobile No:</label>
+                        <div className="h-12 bg-white rounded-lg mt-1">
+                            <input className="h-full w-full px-2" type="email" name="mail" id="mail" onChange={handleEmail} />
+                        </div>
                     </div>
-                </div>
-                <div className='mb-6'>
-                    <label className='block text-lg px-2'>Password:</label>
-                    <div className='h-12 bg-white rounded-lg mt-2'>
-                        <input className='h-full w-full px-2' type="password" name="password1" id="password1" onChange={handlePassword1} />
+                    <div className="mb-5">
+                        <label className="block text-lg font-medium px-2">Password:</label>
+                        <div className="h-12 bg-white rounded-lg mt-1">
+                            <input className="h-full w-full px-2" type="password" name="password1" id="password1" onChange={handlePassword1} />
+                        </div>
                     </div>
-                </div>
-                <div className='mb-6'>
-                    <label className='block text-lg px-2'>Re-password:</label>
-                    <div className='h-12 bg-white rounded-lg mt-2'>
-                        <input className='h-full w-full px-2' type="password" name="password2" id="password2" onChange={handlePassword2} />
+                    <div className="mb-5">
+                        <label className="block text-lg font-medium px-2">Re-password:</label>
+                        <div className="h-12 bg-white rounded-lg mt-1">
+                            <input className="h-full w-full px-2" type="password" name="password2" id="password2" onChange={handlePassword2} />
+                        </div>
                     </div>
-                </div>
-                <div className='flex justify-center'>
-                    <button className='h-10 w-28 bg-black rounded-lg text-white font-semibold' onClick={submit}>
-                        Sign Up
-                    </button>
-                </div>
-                <p className='my-6 text-center'>____________________________or_______________________________</p>
-                <div className='text-center'>
-                    <p className='mb-2'>Already have an account?</p>
-                    <p className='font-bold text-blue-600 cursor-pointer'><Link to ="/Login">Sign in</Link></p>
+                    <div className="flex justify-center ">
+                        <button className="h-10 w-28 bg-black rounded-lg text-white font-semibold" onClick={submit}>
+                            Sign Up
+                        </button>
+                    </div>
+                    <div className="flex items-center my-5">
+    <div className="flex-grow border-t border-black border"></div>
+    <span className="px-4 text-black text-lg">or</span>
+    <div className="flex-grow border-t border-black border"></div>
+</div>
+                    <div className="text-center font-medium">
+                        <p className="mb-1">Already have an account?</p>
+                        <p className="font-bold text-blue-600 text-lg cursor-pointer"><Link to="/Login">Sign in</Link></p>
+                    </div>
                 </div>
                 {/* <div>
                 <div className='h-10 w-28 bg-black rounded-lg mx-40 my-5'>
@@ -132,9 +125,6 @@ function Signup() {
 {/* // ====
 //  main */}
         </div>
-
-        </div>
-       
     );
 }
 
