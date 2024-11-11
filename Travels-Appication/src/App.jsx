@@ -24,12 +24,18 @@ import BookingVehicleList from './components/BookingVehicleList'
 function App() {
 
     const [token,setToken] = useState(null)
+    const [username, setUserName]=useState(null)
     const [from ,setFrom]=useState("")
     const [to,setTo] = useState("")
     const [date, setDate] = useState('');
+    const [days, setDays] = useState(1);
 
     function handleToken(t){
       setToken(t)
+    }
+
+    function handleUserName(t){
+      setUserName(t)
     }
 
     function handleFrom(t){
@@ -42,8 +48,8 @@ function App() {
     function handleDate(t){
       setDate(t)
     }
-    function handleDate2(t){
-      setDate2(t)
+    function handleDays(t){
+      setDays(t)
     }
 
 
@@ -53,7 +59,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<>
-              <Navbar token={token}/>
+              <Navbar token={token} username={username} handleUserName={handleUserName} />
               <Entry from={from} to={to} handleFrom={handleFrom} handleTo={handleTo} date={date} handleDate={handleDate} />
               <TopSearches/>
               <Displayhome/>
@@ -73,7 +79,7 @@ function App() {
 
           <Route path="/Contacts" element={<>
             <Navbar token={token}/>
-            <Contacts/>
+            <Contacts token={token}/>
             <Footer/>
           </>}/>
 
@@ -87,8 +93,8 @@ function App() {
 
           <Route path="/Booking" element={<>
             <Navbar token={token}/>
-            <Search from={from} to={to} handleFrom={handleFrom} handleTo={handleTo} date={date} handleDate={handleDate} />
-            <BookingVehicleList token={token} from={from} to={to} date={date}/>
+            <Search from={from} to={to} handleFrom={handleFrom} handleTo={handleTo} date={date} handleDate={handleDate} days={days} handleDays={handleDays} />
+            <BookingVehicleList token={token} from={from} to={to} date={date} days={days} username={username}/>
             <Footer/>
           </>}/>
 
