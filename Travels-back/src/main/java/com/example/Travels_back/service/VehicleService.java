@@ -13,6 +13,16 @@ public class VehicleService {
     private VehicleRepo vehicleRepo;
 
     public List<Vehicle> getVehicles(){
-        return vehicleRepo.findAll();
+        List<Vehicle> vehicles =vehicleRepo.findAll();
+
+        return vehicles;
+    }
+
+    public List<Vehicle> getPrice(int days){
+        List<Vehicle> vehicles = getVehicles();
+        for(Vehicle v : vehicles){
+            v.setPrice(v.getPrice()*days);
+        }
+        return vehicles;
     }
 }
