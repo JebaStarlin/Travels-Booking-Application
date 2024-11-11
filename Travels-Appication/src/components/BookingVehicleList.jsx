@@ -9,11 +9,11 @@ function BookingVehicleList(props) {
         if(props.token != null){
             apiCall()
           }
-    },[])
+    },[props.days])
 
     const apiCall=async()=>{
         try {
-            const response = await fetch("http://localhost:8081/details/vehicles",{
+            const response = await fetch(`http://localhost:8081/details/prices?days=${props.days}`,{
                 method:"GET",
                 headers : {
                     "Content-Type" : "application/json",
@@ -31,7 +31,7 @@ function BookingVehicleList(props) {
 
   return (
     <div>
-        {vehicles?.map(v => <Singledetails key={v.vehicleId} vehicle={v} from={props.from} to={props.to} date={props.date}/>)}
+        {vehicles?.map(v => <Singledetails key={v.vehicleId} token={props.token} vehicle={v} from={props.from} to={props.to} date={props.date} username={props.username}/>)}
     </div>
   )
 }

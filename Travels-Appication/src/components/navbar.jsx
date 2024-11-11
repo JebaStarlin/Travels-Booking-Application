@@ -7,7 +7,6 @@ import { styled } from '@mui/system';
 import React from "react";
 
 function Navbar(props) {
-  const [username, setUserName]=useState(null)
   const navigate = useNavigate()
 
    useEffect(()=>{
@@ -19,16 +18,17 @@ function Navbar(props) {
     },[])
   
     const [anchor, setAnchor] = React.useState(null);
-    const username = "LOGIN"; 
+    // const username = "LOGIN"; 
 
     const handleClick = (event) => {
-        if (username !== "LOGIN") {
+        if (props.username !== null) {
+          console.log(event)
             setAnchor(anchor ? null : event.currentTarget);
         }
     };
 
     const open = Boolean(anchor);
-    const id 
+    const id =0
 
     const apiCall = async()=>{
       try {
@@ -42,7 +42,7 @@ function Navbar(props) {
         if(response.ok){
           const result = await response.json()
           console.log(result.username)
-          setUserName(result.username)
+          props.handleUserName(result.username)
         }
         else{
           console.error("Got username not found from api")
@@ -57,28 +57,31 @@ function Navbar(props) {
     }
 
   return (
-        <nav className='flex flex-row justify-between items-center bg-black text-white h-20 px-10'>
-            <div className="flex flex-row space-x-4">
-                <p><Link to="/">HOME</Link></p>
-                <p><Link to="/Display">DISPLAY</Link></p>
-                <p><Link to="/Packages">PACKAGES</Link></p>
-                <p><Link to="/Booking">BOOKING</Link></p>
-                <p><Link to="/Contacts">CONTACTS</Link></p>
-            </div>
+    <nav className='flex flex-row justify-between items-center bg-black text-white h-20 px-10'>
+        <div className="flex flex-row space-x-4">
+            <p><Link to="/">HOME</Link></p>
+            <p><Link to="/Display">DISPLAY</Link></p>
+            <p><Link to="/Packages">PACKAGES</Link></p>
+            <p><Link to="/Booking">BOOKING</Link></p>
+            <p><Link to="/Contacts">CONTACTS</Link></p>
+        </div>
 
-            <div className="flex flex-row space-x-4">
-                <Button aria-describedby={id} type="button" onClick={handleClick}>
-                   <p> <Link to="/LOGIN">{username}</Link> </p>
-                </Button>
-                <BasePopup id={id} open={open} anchor={anchor}>
-                    <PopupBody>
-                        <p><Link to="/Profile">Profile</Link></p>
-                        <p><Link to="/Signout">Sign Out</Link></p>
-                    </PopupBody>
-                </BasePopup>
-            </div>
-        </nav>
-    );
+        <div className="flex flex-row space-x-4">
+            <Button aria-describedby={id} type="button" onClick={handleClick}>
+              <div> {props.username==null && <p> <Link to="/LOGIN">Login</Link> </p>} </div>
+              <div> {props.username!=null && <p> <Link to="/LOGIN">{props.username}</Link> </p>} </div>
+                {/* <p> <Link to="/LOGIN">Login</Link> </p> */}
+            </Button>
+            <BasePopup id={id} open={open} anchor={anchor}>
+                <PopupBody>
+                    <p><Link to="/Profile">Profile</Link></p>
+                    <p><Link to="/Signout">Sign Out</Link></p>
+                </PopupBody>
+            </BasePopup>
+        </div>
+    </nav>
+  );
+}
 
 const grey = {
     700: '#b0b0b0',
@@ -141,5 +144,5 @@ const Button = styled('button')(
   `,
 );
 
-export default Nav;
+export default Navbar;
 

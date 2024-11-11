@@ -3,6 +3,35 @@ import veh1 from '../assets/tempotravellerrental.jpg';
 function Singledetails(props) {
     const vehicle = props.vehicle
 
+    const apiCall = async()=>{
+      try {
+        const data = {
+          "vehicleId" :`${props.vehicle.vehicleId}`,
+          "username" : `${props.username}`,
+          "from" : `${props.from}`,
+          "to" : `${props.to}`,
+          "date" : `${props.date}`,
+          "days" : `${props.days}`
+        }
+        const response = await fetch("http://localhost:8081/mail/booking",{
+          method : "POST",
+          headers : {
+              'Content-Type' : 'application/json',
+              "Authorization" : `Bearer ${props.token}`
+          },
+          body : JSON.stringify(data)
+        })
+        if(response.ok){
+          alert("mail sent")
+        }
+        else{
+          console.log("errr")
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
   return (
     <div>
      
@@ -61,11 +90,11 @@ function Singledetails(props) {
         <div className='flex justify-center items-center space-x-5 pt-10'>
           <p>PRICE :</p>
           <div className='bg-black rounded-lg h-24 w-32 flex items-center justify-center'>
-            <p className='text-white'></p>
+            <p className='text-white'>{props.vehicle.price}</p>
           </div>
         </div>
         <div className='flex justify-center items-center pt-10'>
-          <div className='bg-black rounded-lg h-10 w-32 flex items-center justify-center'>
+          <div className='bg-black rounded-lg h-10 w-32 flex items-center justify-center' onClick={apiCall}>
             <p className='text-white'>Book Now</p>
           </div>
         </div>

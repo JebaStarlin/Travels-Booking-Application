@@ -33,14 +33,17 @@ function Search(props) {
             className='w-full h-8'
             type="date"
             value={props.date}
-            onChange={(e) => props.handleDate(formatDate(e.target.value))}
+            onChange={(e) => props.handleDate(e.target.value)}
           />
         </div>
         <div className='w-full md:w-1/4 flex justify-center items-center p-2 md:p-8 bg-black text-white rounded-b-3xl md:rounded-b-none md:rounded-r-3xl cursor-pointer'>
-          <p className='text-lg md:text-xl' onClick={console.log("cbdicjs")}>Book</p>
+          <p className='text-lg md:text-xl' onClick={check}>Book</p>
         </div>
       </div>
-      {/* <div className='text-white' onClick={check}>cvsdvcbseibvpw9uvbwprivbw</div> */}
+      <div className='text-white m-10' >
+        No. of Days<br/>
+        <input className='text-black' type='number' value={props.days} onChange={(e)=>{props.handleDays(e.target.value)}}/>
+      </div>
     </div>
   );
 }
