@@ -20,11 +20,13 @@ public class Vehicle {
     private int seats;
     private String vehicleType;
     private String color;
+    private double price;
 
-    public Vehicle(String vehicleName, int seats, String vehicleType, String color) {
+    public Vehicle(String vehicleName, int seats, String vehicleType, String color ,double price) {
         this.vehicleName = vehicleName;
         this.seats = seats;
         this.vehicleType = vehicleType;
         this.color = color;
+        this.price = price;
     }
 }
