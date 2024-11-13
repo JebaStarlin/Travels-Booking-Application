@@ -64,8 +64,8 @@ function Singledetails(props) {
         </div>
         <div className='flex flex-wrap justify-between mx-4 md:mx-20 mt-3'>
           <div className="bg-white">
+            <img className='w-24 h-36 object-cover' src={"https://th.bing.com/th/id/OIP.RuUXba4cb12L2zAEIvRYggHaFj?rs=1&pid=ImgDetMain"} alt=""/>
             {vehicle.vehicleName}
-            {/* <img className='w-24 h-36 object-cover' src={veh1} alt=""/> */}
           </div>
           <div>
             <input className="h-36 w-24 bg-black text-white rounded-lg" type="text"/>
